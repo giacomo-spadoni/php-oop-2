@@ -18,6 +18,14 @@ include __DIR__ . '/data.php';
 </style>
 
 <body>
+
+    <div>cliente <?= $pippo->nome ?> <?= $pippo->cognome ?></div>
+    <div>carrello :
+
+        <?php foreach ($pippo->riempiCarrello($prodotti) as $prodotto) : ?>
+            <?= $prodotto->nome ?> -
+        <?php endforeach; ?>
+    </div>
     <div class="flex">
         <?php foreach ($prodotti as $prodotto) : ?>
             <ul>

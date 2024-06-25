@@ -3,6 +3,9 @@
 include __DIR__ . '/Models/product.php';
 include __DIR__ . '/Models/category.php';
 include __DIR__ . '/Models/typeProduct.php';
+include __DIR__ . '/Models/cliente.php';
+
+$pippo = new Client('Giacomo', 'Spadoni', 0);
 
 $prodotti = [
     $cucciaGrande = new Bed('cuccia comodissima', 30.99, './img/cucciagrande.jpg', new Category('Cane', 'taglia medio o piccola'), 'medium', "piuma d'oca"),
