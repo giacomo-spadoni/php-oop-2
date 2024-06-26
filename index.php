@@ -34,23 +34,16 @@ include __DIR__ . '/data.php';
                 <img width="100px" height="100px" src="<?= $prodotto->img ?>" alt="">
                 <li><?= $prodotto->category->categoria ?></li>
                 <li><?= $prodotto->category->descrizione ?></li>
-                <?php if (property_exists($prodotto, 'grandezza')) : ?>
-                    <li>Grandezza: <?= $prodotto->grandezza ?></li>
+                <?php if (get_class($prodotto) == 'Food') : ?>
+                    <li>Tipologia: <?= $prodotto->tipologia ?></li>
+                    <li>Data di Scadenza: <?= $prodotto->scadenza ?></li>
                 <?php endif; ?>
-
-                <?php if (property_exists($prodotto, 'materiale')) : ?>
+                <?php if (get_class($prodotto) == 'Bed') : ?>
+                    <li>Grandezza: <?= $prodotto->grandezza ?></li>
                     <li>Materiale: <?= $prodotto->materiale ?></li>
                 <?php endif; ?>
-
-                <?php if (property_exists($prodotto, 'tipologia')) : ?>
-                    <li>Tipologia: <?= $prodotto->tipologia ?></li>
-                <?php endif; ?>
-
-                <?php if (property_exists($prodotto, 'scadenza')) : ?>
-                    <li>Scadenza: <?= $prodotto->scadenza ?></li>
-                <?php endif; ?>
-
-                <?php if (property_exists($prodotto, 'commestibile')) : ?>
+                <?php if (get_class($prodotto) == 'Game') : ?>
+                    <li>Materiale: <?= $prodotto->materiale ?></li>
                     <li><?= $prodotto->isedible() ?></li>
                 <?php endif; ?>
             </ul>
